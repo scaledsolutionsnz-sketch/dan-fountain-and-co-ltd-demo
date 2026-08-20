@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dan Fountain &amp; Co Ltd | Award Winning Master Builders, Wānaka</title>
+<meta name="description" content="Dan Fountain & Co Ltd are award winning Registered Master Builders in Wānaka. Architectural new homes, high-end interiors and renovations across the Upper Clutha. Call 021 988 865." />
+<meta name="theme-color" content="#171512" />
+<meta property="og:title" content="Dan Fountain &amp; Co Ltd | Master Builders, Wānaka" />
+<meta property="og:description" content="Award winning Registered Master Builders in Wānaka. Architectural new homes, high-end interiors and renovations." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="img/hero-schist.jpg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23171512'/%3E%3Cpath d='M30 68V44l20-16 20 16v24H56V52H44v16z' fill='%23F2EFE8'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#F2EFE8; --bone:#E9E5DA; --ink:#211E19; --muted:#6A6357;
+  --dark:#171512; --dark-2:#211E19; --accent:#B96F35; --accent-2:#9A5926; --accent-soft:#E2A265;
+  --line:rgba(33,30,25,.12); --radius:14px; --maxw:1180px;
+  --shadow:0 18px 50px -22px rgba(23,21,18,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Mulish',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:15.5px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;image-orientation:from-image}
+h1,h2,h3{font-family:'Jost',system-ui,sans-serif;font-weight:600;line-height:1.1;letter-spacing:.005em}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.eyebrow{font-weight:800;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:1rem;padding:15px 26px;border-radius:999px;min-height:52px;transition:transform .25s ease,background .25s ease;cursor:pointer;border:1.5px solid transparent}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn-ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-dark:hover{background:#322c24;transform:translateY(-2px)}
+.btn svg{width:19px;height:19px}
+.sec{padding:92px 0}
+.sec-bone{background:var(--bone)}
+.sec-dark{background:var(--dark);color:#EFEAE0}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* logo images */
+.brand-logo{height:34px;width:auto;display:block}
+#intro .logo-img{width:min(400px,76vw);height:auto;opacity:0;animation:introUp .9s ease .1s forwards}
+.foot-logo{height:52px;width:auto;margin-bottom:16px;display:inline-block}
+
+/* intro */
+#intro{position:fixed;inset:0;z-index:9999;background:var(--dark);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;transition:opacity .7s ease .2s,visibility .7s ease .2s}
+#intro.hide{opacity:0;visibility:hidden}
+#intro .ln{width:0;height:2px;background:var(--accent);animation:introLn 1.1s ease .5s forwards}
+#intro .sub{font-weight:800;font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent-soft);opacity:0;animation:introUp .7s ease .8s forwards}
+@keyframes introUp{to{opacity:1;transform:translateY(0)}}
+@keyframes introLn{to{width:130px}}
+
+/* nav */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:900;transition:background .3s ease,box-shadow .3s ease;padding:15px 0}
+header.nav.scrolled{background:rgba(23,21,18,.94);backdrop-filter:blur(10px);box-shadow:0 6px 24px -16px rgba(0,0,0,.6)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a.lnk{font-weight:700;font-size:.93rem;color:#fff;opacity:.92;transition:opacity .2s ease}
+.nav-links a.lnk:hover{opacity:1}
+.nav-call{display:inline-flex;align-items:center;gap:.45rem;background:var(--accent);color:#fff;height:44px;padding:0 20px;border-radius:999px;font-weight:800;font-size:.92rem;line-height:1}
+.nav-call:hover{background:var(--accent-2)}
+.nav-call svg{width:17px;height:17px}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+.burger span{width:26px;height:2.5px;background:#fff;border-radius:2px;transition:.3s}
+#mobmenu{position:fixed;inset:0;z-index:950;background:var(--dark);transform:translateX(100%);transition:transform .4s cubic-bezier(.6,0,.2,1);display:flex;flex-direction:column;padding:26px 24px;gap:6px}
+#mobmenu.open{transform:none}
+#mobmenu .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+#mobmenu a{color:#EFEAE0;font-family:'Jost',system-ui,sans-serif;font-size:1.25rem;font-weight:600;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+#mobmenu .close{background:none;border:0;color:#EFEAE0;font-size:2rem;cursor:pointer;line-height:1}
+#mobmenu .mm-call{margin-top:26px;border-bottom:0}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;background:var(--dark);overflow:hidden}
+.hero-slides{position:absolute;inset:0}
+.hero-slides .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease}
+.hero-slides .slide.active{opacity:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,21,18,.5) 0%,rgba(23,21,18,.42) 55%,rgba(23,21,18,.85) 100%)}
+.hero-inner{position:relative;z-index:3;padding:130px 0 64px;width:100%}
+.hero .eyebrow{color:var(--accent-soft)}
+.hero h1{color:#fff;font-weight:600;font-size:clamp(2.2rem,4.6vw,3.6rem);letter-spacing:.005em;margin:16px 0 20px;max-width:17ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero p.lead{color:rgba(255,255,255,.9);font-size:clamp(1rem,1.4vw,1.15rem);max-width:52ch;margin-bottom:30px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.rating-badge{display:inline-flex;align-items:center;gap:13px;background:rgba(23,21,18,.55);backdrop-filter:blur(9px);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:12px 20px;color:#fff}
+.rating-badge .stars{color:#F2B84A;letter-spacing:2px;font-size:.92rem}
+.rating-badge b{font-weight:800;font-size:.92rem}
+.rating-badge small{display:block;color:rgba(255,255,255,.72);font-size:.78rem;font-weight:600}
+
+/* section head */
+.shead{max-width:660px;margin-bottom:52px}
+.shead.center{margin:0 auto 52px;text-align:center}
+.shead h2{font-size:clamp(1.7rem,3vw,2.4rem);margin:14px 0 14px}
+.shead p{color:var(--muted)}
+.sec-dark .shead p{color:rgba(239,234,224,.72)}
+
+/* services */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-6px)}
+.card .ph{aspect-ratio:16/11;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.card:hover .ph img{transform:scale(1.06)}
+.card .bd{padding:24px 24px 28px}
+.card .bd h3{font-size:1.22rem;margin-bottom:8px}
+.card .bd p{color:var(--muted);font-size:.97rem}
+.card .num{font-family:'Jost',system-ui,sans-serif;color:var(--accent);font-weight:600;font-size:.95rem;letter-spacing:.06em}
+.grid3 .card:nth-child(4){grid-column:1 / 3}
+.grid3 .card:nth-child(4) .ph{aspect-ratio:16/7}
+@media(max-width:900px){.grid3 .card:nth-child(4){grid-column:auto}.grid3 .card:nth-child(4) .ph{aspect-ratio:16/11}}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.about-img{position:relative}
+.about-img img{width:100%;aspect-ratio:4/4.6;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)}
+.about-img .tag{position:absolute;left:-14px;bottom:-14px;background:var(--dark);color:#fff;padding:16px 22px;border-radius:12px;font-family:'Jost',system-ui,sans-serif;font-weight:600;font-size:1rem;line-height:1.15;box-shadow:var(--shadow)}
+.about-img .tag small{display:block;font-family:'Mulish';font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-soft);margin-top:4px}
+.about h2{font-size:clamp(1.7rem,3vw,2.3rem);margin:14px 0 18px}
+.about p{color:var(--muted);margin-bottom:16px}
+.checklist{list-style:none;margin-top:24px;display:grid;gap:14px}
+.checklist li{display:flex;gap:13px;align-items:flex-start;font-weight:700;color:var(--ink)}
+.checklist .tick{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;margin-top:1px}
+.checklist .tick svg{width:15px;height:15px}
+
+/* projects filmstrip */
+.strip{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:14px;scrollbar-color:var(--accent) var(--bone)}
+.strip::-webkit-scrollbar{height:8px}
+.strip::-webkit-scrollbar-track{background:var(--bone);border-radius:99px}
+.strip::-webkit-scrollbar-thumb{background:var(--accent);border-radius:99px}
+.strip figure{margin:0;flex:none;scroll-snap-align:start;max-width:86vw}
+.strip img{height:clamp(260px,40vw,400px);width:auto;max-width:100%;object-fit:cover;border-radius:12px}
+.strip figcaption{font-size:.86rem;color:var(--muted);margin-top:10px;font-weight:700}
+
+/* instagram */
+.ig-wrap{display:flex;justify-content:center}
+.ig-wrap .instagram-media{margin:0 auto !important;box-shadow:var(--shadow) !important;border-radius:var(--radius) !important;max-width:540px !important;width:100% !important}
+.ig-cta{text-align:center;margin-top:30px}
+
+/* reviews */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
+.rev .stars{color:#E0982F;letter-spacing:2px;font-size:1rem}
+.rev p{color:var(--ink);font-size:1rem}
+.rev .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.rev .who .ini{width:42px;height:42px;border-radius:50%;background:var(--bone);color:var(--accent);display:grid;place-items:center;font-weight:800}
+.rev .who b{display:block;font-size:.96rem}
+.rev .who small{color:var(--muted);font-size:.82rem}
+.rev-actions{text-align:center;margin-top:44px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;background:rgba(185,111,53,.14);color:var(--accent-2);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 13px;border-radius:999px}
+
+/* review banner */
+.revbanner{text-align:center}
+.revbanner h2{color:#fff;font-size:clamp(1.5rem,2.6vw,2rem);max-width:22ch;margin:12px auto 14px}
+.revbanner p{color:rgba(239,234,224,.72);max-width:48ch;margin:0 auto 28px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1.05fr 1fr;gap:52px;align-items:center}
+.contact .info h2{color:#fff;font-size:clamp(1.7rem,3vw,2.3rem);margin:14px 0 18px}
+.contact .info>p{color:rgba(239,234,224,.75);margin-bottom:26px;max-width:44ch}
+.crow{display:flex;gap:15px;align-items:center;padding:15px 0;border-top:1px solid rgba(255,255,255,.1)}
+.crow:last-of-type{border-bottom:1px solid rgba(255,255,255,.1)}
+.crow .ic{flex:none;width:44px;height:44px;border-radius:11px;background:rgba(185,111,53,.18);color:var(--accent-soft);display:grid;place-items:center}
+.crow .ic svg{width:20px;height:20px}
+.crow b{display:block;color:#fff;font-size:.94rem}
+.crow small{color:rgba(239,234,224,.6);font-size:.82rem;letter-spacing:.04em}
+.socials{display:flex;gap:12px;margin-top:24px}
+.socials a{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);display:grid;place-items:center;color:#EFEAE0;transition:.25s}
+.socials a:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-3px)}
+.socials svg{width:20px;height:20px}
+.contact-actions{background:var(--dark-2);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:38px 32px;text-align:center}
+.contact-actions h3{color:#fff;font-size:1.35rem;margin-bottom:10px}
+.contact-actions p{color:rgba(239,234,224,.72);margin-bottom:26px;font-size:.98rem}
+.contact-actions .btn{width:100%;justify-content:center;margin-bottom:14px;font-size:.94rem}
+.contact-actions .fineprint{color:rgba(239,234,224,.5);font-size:.82rem;margin:6px 0 0}
+
+/* map */
+.map-wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.map-frame{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.1);line-height:0}
+.map-frame iframe{width:100%;height:420px;border:0}
+
+/* footer */
+footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.09)}
+.foot-grid p{font-size:.95rem;max-width:34ch}
+.foot-col h4{color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px}
+.foot-col a{display:block;padding:6px 0;font-size:.96rem;color:rgba(239,234,224,.72);transition:color .2s}
+.foot-col a:hover{color:var(--accent-soft)}
+.foot-social{display:flex;gap:11px;margin-top:16px}
+.foot-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.07);display:grid;place-items:center;color:#EFEAE0;transition:.25s}
+.foot-social a:hover{background:var(--accent);transform:translateY(-3px)}
+.foot-social svg{width:18px;height:18px}
+.foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:.86rem;color:rgba(239,234,224,.5)}
+.foot-bot a{color:rgba(239,234,224,.5)}
+.foot-bot a:hover{color:var(--accent-soft)}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .grid3,.rev-grid{grid-template-columns:1fr}
+  .about,.contact{grid-template-columns:1fr;gap:34px}
+  .about-img{order:-1}
+  .foot-grid{grid-template-columns:1fr;gap:30px}
+  .sec{padding:66px 0}
+  .hero-inner{padding:120px 0 46px}
+}
+@media(max-width:520px){
+  body{font-size:14.5px}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{width:100%;justify-content:center}
+  .rev-actions{flex-direction:column}
+  .rev-actions .btn{width:100%;justify-content:center}
+  .about-img .tag{left:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{transition:none;opacity:1;transform:none}
+  #intro .logo-img,#intro .ln,#intro .sub{animation:none;opacity:1;width:130px}
+  #intro .logo-img{width:min(400px,76vw)}
+}
+</style>
+</head>
+<body>
+
+<!-- opening animation -->
+<div id="intro" aria-hidden="true">
+  <img class="logo-img" src="img/logo-white.png" alt="" width="900" height="264">
+  <div class="ln"></div>
+  <div class="sub">Wānaka · Master Builders</div>
+</div>
+
+<!-- nav -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand" aria-label="Dan Fountain and Co home"><img class="brand-logo" src="img/logo-white.png" alt="Dan Fountain &amp; Co" width="900" height="264"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="lnk" href="#services">What we build</a>
+      <a class="lnk" href="#about">About</a>
+      <a class="lnk" href="#projects">Projects</a>
+      <a class="lnk" href="#reviews">Reviews</a>
+      <a class="lnk" href="#contact">Contact</a>
+      <a class="nav-call" href="tel:+6421988865">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        021 988 865
+      </a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div id="mobmenu">
+  <div class="top">
+    <img class="brand-logo" src="img/logo-white.png" alt="Dan Fountain &amp; Co" width="900" height="264">
+    <button class="close" id="mmclose" aria-label="Close menu">&times;</button>
+  </div>
+  <a href="#services">What we build</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-primary mm-call" href="tel:+6421988865" style="justify-content:center">Call 021 988 865</a>
+</div>
+
+<!-- hero -->
+<section class="hero" id="top">
+  <div class="hero-slides" id="slides">
+    <div class="slide active" style="background-image:url('img/hero-schist.jpg')" data-eager></div>
+    <div class="slide" data-src="img/hero-dusk.jpg"></div>
+    <div class="slide" data-src="img/hero-build.jpg"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="eyebrow">Wānaka · Registered Master Builders</span>
+      <h1>Award winning homes, built right here in Wānaka.</h1>
+      <p class="lead">Dan Fountain &amp; Co builds architectural new homes and high-end renovations across the Upper Clutha. One tight crew, from the first pour to the final fit-off.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="tel:+6421988865">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Talk to Dan
+        </a>
+        <a class="btn btn-ghost" href="#projects">See our work</a>
+        <a class="rating-badge" href="#reviews">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span><b>Award winning Master Builders</b><small>Registered Master Builders · Wānaka</small></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- services -->
+<section class="sec sec-bone" id="services">
+  <div class="wrap">
+    <div class="shead reveal">
+      <h2>Built from the ground up, finished to the last detail</h2>
+      <p>From bare sections to architectural homes with schist, cedar and glass, the same crew takes your build the whole way. Not sure where your project fits? Call and talk it through.</p>
+    </div>
+    <div class="grid3">
+      <article class="card reveal">
+        <div class="ph"><img loading="lazy" width="1400" height="963" src="img/patio.jpg" alt="Black cedar clad home with concrete patio pads and mountain views" ></div>
+        <div class="bd"><span class="num">01</span><h3>Architectural new homes</h3><p>Design-led new builds in cedar, schist and steel, managed end to end from earthworks to handover.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="ph"><img loading="lazy" width="1400" height="1211" src="img/kitchen-marble.jpg" alt="Kitchen with black marble island bench, brass rangehood and recycled timber ceiling"></div>
+        <div class="bd"><span class="num">02</span><h3>High-end interiors</h3><p>Kitchens, stone benchtops, timber ceilings and cabinetry fitted with the care a good build deserves.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="ph"><img loading="lazy" width="1200" height="1561" src="img/sauna.jpg" alt="Custom cedar sauna being installed by Dan Fountain and Co"></div>
+        <div class="bd"><span class="num">03</span><h3>Specialist joinery &amp; fit-outs</h3><p>Saunas, feature walls and the tricky one-off details other builders pass on. We enjoy them.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="ph"><img loading="lazy" width="1200" height="990" src="img/boardwalk.jpg" alt="Timber boardwalk and platform structures at sunrise with mountain backdrop"></div>
+        <div class="bd"><span class="num">04</span><h3>Decks, landscaping &amp; site work</h3><p>Concrete, decks, boardwalks and outdoor structures that tie the house into its site, built to handle Central Otago weather.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- about -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="about-img reveal">
+        <img loading="lazy" width="1200" height="1583" src="img/site-sign.jpg" alt="Dan Fountain and Co Ltd site sign in front of a schist home in the hills above Wānaka">
+        <div class="tag">Wānaka<small>Registered Master Builders</small></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">About Dan Fountain &amp; Co</span>
+        <h2>The builder you deal with is the builder on your site</h2>
+        <p>Dan Fountain &amp; Co is an award winning building company based in Wānaka. Dan and the crew build architectural homes, renovations and high-end interiors across the Upper Clutha, and every job gets the same standard: square, solid and finished properly.</p>
+        <p>As Registered Master Builders, the work is backed by the Master Build Guarantee. You deal directly with Dan from pricing to handover, so decisions get made fast and nothing is lost in translation.</p>
+        <ul class="checklist">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Award winning Registered Master Builders</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Architectural new homes, renovations and interiors</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Wānaka based, serving the whole Upper Clutha</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Clear pricing and one point of contact, Dan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- projects -->
+<section class="sec sec-bone" id="projects">
+  <div class="wrap">
+    <div class="shead reveal">
+      <h2>On the tools around Wānaka</h2>
+      <p>A look across current and finished projects, from first concrete pour to glass gables and finished interiors.</p>
+    </div>
+    <div class="strip reveal" tabindex="0" aria-label="Photos of Dan Fountain and Co projects">
+      <figure>
+        <img loading="lazy" width="1200" height="1519" src="img/glass-gable.jpg" alt="Double height glass gable with schist fireplace at dusk">
+        <figcaption>Glass gable and schist fireplace, lit up at dusk.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" width="1200" height="1583" src="img/cedar.jpg" alt="Cedar cladding detail glowing in evening sun">
+        <figcaption>Cedar cladding catching the last of the sun.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" width="1400" height="1078" src="img/fitout.jpg" alt="Builder installing cabinetry inside a recycled timber interior">
+        <figcaption>Cabinetry going in under a recycled timber ceiling.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" width="1200" height="922" src="img/kitchen-window.jpg" alt="Kitchen cabinetry being fitted beside full height windows">
+        <figcaption>Kitchen fit-off, mountain views included.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" width="1200" height="1465" src="img/concrete-pour.jpg" alt="Concrete pump pouring a patio slab beside a schist and glass home">
+        <figcaption>Patio pour going down on a winter morning.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- instagram -->
+<section class="sec" id="follow">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <h2>Follow the build</h2>
+      <p>Progress shots and finished work, straight from site. Here's a recent post from the Instagram page.</p>
+    </div>
+    <div class="ig-wrap reveal">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DcNo5qexRRJ/" data-instgrm-version="14" style="background:#FFF; border:0; margin:0 auto; max-width:540px; min-width:280px; padding:0; width:100%;">
+        <a href="https://www.instagram.com/p/DcNo5qexRRJ/" target="_blank" rel="noopener">View this post on Instagram</a>
+      </blockquote>
+    </div>
+    <div class="ig-cta reveal">
+      <a class="btn btn-dark" href="https://www.instagram.com/p/DcNo5qexRRJ/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+        See more on Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- reviews -->
+<section class="sec sec-bone" id="reviews">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <h2>What clients say <span class="badge" style="vertical-align:middle;margin-left:8px">Example reviews</span></h2>
+      <p>Real Google reviews will show here once they're live. In the meantime, this is the kind of feedback an award winning builder earns.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Dan built our new home above the lake and the finish is superb. Schist, cedar, big glass, all of it done properly and on the timeline he gave us at the start."</p>
+        <div class="who"><span class="ini">CW</span><span><b>Craig W.</b><small>Wānaka · New build</small></span></div>
+      </div>
+      <div class="rev reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"The attention to detail on our kitchen and interior fit-out was something else. The crew were tidy, easy to have around and nothing was a problem."</p>
+        <div class="who"><span class="ini">SM</span><span><b>Sarah-Jane M.</b><small>Albert Town · Renovation</small></span></div>
+      </div>
+      <div class="rev reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Straight answers, clear pricing and quality you can see from the road. Our architect said it was some of the best workmanship he's come across."</p>
+        <div class="who"><span class="ini">TK</span><span><b>Tom K.</b><small>Luggate · Architectural build</small></span></div>
+      </div>
+    </div>
+    <div class="rev-actions reveal">
+      <a class="btn btn-primary" href="https://www.google.com/maps/search/Dan+Fountain+and+Co+Wanaka" target="_blank" rel="noopener">Leave us a Google review</a>
+      <a class="btn btn-dark" href="https://www.google.com/maps/search/Dan+Fountain+and+Co+Wanaka" target="_blank" rel="noopener">See all our Google reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- review banner -->
+<section class="sec sec-dark revbanner" style="padding:74px 0">
+  <div class="wrap reveal">
+    <h2>Happy with your build? A quick review helps other locals find us.</h2>
+    <p>If Dan Fountain &amp; Co did right by you, a few words on Google means a lot to a local crew.</p>
+    <a class="btn btn-primary" href="https://www.google.com/maps/search/Dan+Fountain+and+Co+Wanaka" target="_blank" rel="noopener">Leave a review on Google</a>
+  </div>
+</section>
+
+<!-- contact -->
+<section class="sec sec-dark" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div class="info reveal">
+        <span class="eyebrow" style="color:var(--accent-soft)">Get in touch</span>
+        <h2>Talk to Dan about your project</h2>
+        <p>Call or text with what you've got in mind and roughly where the site is. You'll get a straight answer and a clear price.</p>
+        <div class="crow">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><b>021 988 865</b><small>Call or text Dan</small></div>
+        </div>
+        <div class="crow">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <div><b>Email the team</b><small>For plans, pricing and enquiries</small></div>
+        </div>
+        <div class="crow">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><b>Wānaka, Central Otago</b><small>Serving Wānaka, Albert Town, Luggate, Hāwea &amp; Cardrona</small></div>
+        </div>
+        <div class="crow">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div><b>Mon-Fri, on site from early</b><small>Leave a text after hours and Dan will come back to you</small></div>
+        </div>
+        <div class="socials">
+          <a href="https://www.facebook.com/search/top?q=dan%20fountain%20and%20co" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/p/DcNo5qexRRJ/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="contact-actions reveal">
+        <h3>Start the conversation</h3>
+        <p>The fastest way to get moving on your build.</p>
+        <a class="btn btn-primary" href="tel:+6421988865">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Dan, 021 988 865
+        </a>
+        <a class="btn btn-ghost" href="#" data-gmail data-user="danfountainandco" data-domain="gmail.com" data-su="Enquiry%20from%20the%20website" data-body="Hi%20Dan%2C%0A%0AI%27d%20like%20to%20talk%20about%3A%20">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          Email the team
+        </a>
+        <p class="fineprint">No forms and no waiting, you reach Dan directly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- map -->
+<section class="sec-dark" style="padding-bottom:70px">
+  <div class="map-wrap">
+    <div class="map-frame reveal">
+      <iframe loading="lazy" title="Dan Fountain and Co location, Wānaka, Central Otago" src="https://www.google.com/maps?q=W%C4%81naka%2C%20New%20Zealand&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img class="foot-logo" src="img/logo-white.png" alt="Dan Fountain &amp; Co" width="900" height="264">
+        <p>Award winning Registered Master Builders in Wānaka. Architectural new homes, renovations, interiors and specialist joinery across the Upper Clutha.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/search/top?q=dan%20fountain%20and%20co" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="https://www.instagram.com/p/DcNo5qexRRJ/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#services">What we build</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="tel:+6421988865">021 988 865</a>
+        <a href="sms:+6421988865">Text Dan</a>
+        <a href="https://www.google.com/maps/search/Dan+Fountain+and+Co+Wanaka" target="_blank" rel="noopener">Leave a review</a>
+        <span style="display:block;padding:6px 0;font-size:.96rem">Wānaka, Central Otago</span>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr">2026</span> Dan Fountain &amp; Co Ltd · Wānaka, Central Otago</span>
+      <span><a href="terms.html">Terms &amp; Conditions</a> · <a href="privacy.html">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script async src="https://www.instagram.com/embed.js"></script>
+<script>
+(function(){
+  // intro
+  window.addEventListener('load',function(){setTimeout(function(){document.getElementById('intro').classList.add('hide')},1200);});
+  setTimeout(function(){document.getElementById('intro').classList.add('hide')},3200);
+
+  // nav scroll state via sentinel
+  var nav=document.getElementById('nav');
+  var sentinel=document.createElement('div');
+  sentinel.style.cssText='position:absolute;top:50px;left:0;width:1px;height:1px';
+  document.body.appendChild(sentinel);
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){nav.classList.toggle('scrolled',!es[0].isIntersecting);}).observe(sentinel);
+  }else{nav.classList.add('scrolled');}
+
+  // mobile menu
+  var mm=document.getElementById('mobmenu');
+  document.getElementById('burger').addEventListener('click',function(){mm.classList.add('open');});
+  document.getElementById('mmclose').addEventListener('click',function(){mm.classList.remove('open');});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('open');});});
+
+  // hero slideshow
+  var slides=Array.prototype.slice.call(document.querySelectorAll('#slides .slide'));
+  slides.forEach(function(s){if(s.dataset.src && !s.dataset.eager){var i=new Image();i.onload=function(){s.style.backgroundImage="url('"+s.dataset.src+"')";};i.src=s.dataset.src;}});
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && slides.length>1){
+    var idx=0;
+    setInterval(function(){slides[idx].classList.remove('active');idx=(idx+1)%slides.length;slides[idx].classList.add('active');},6000);
+  }
+
+  // gmail compose buttons (address assembled in JS)
+  document.querySelectorAll('a[data-gmail]').forEach(function(a){
+    var to=a.getAttribute('data-user')+'@'+a.getAttribute('data-domain');
+    a.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(to)+'&su='+(a.getAttribute('data-su')||'')+'&body='+(a.getAttribute('data-body')||'');
+    a.target='_blank';a.rel='noopener';
+  });
+
+  // reveal on scroll
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  document.getElementById('yr').textContent=(new Date()).getFullYear();
+})();
+</script>
+</body>
+</html>
