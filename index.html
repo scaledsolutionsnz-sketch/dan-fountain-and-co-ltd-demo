@@ -24,7 +24,11 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Mulish',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:15.5px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block;image-orientation:from-image}
+/* height:auto matters here: an img's width/height ATTRIBUTES arrive as CSS,
+   and without this the attribute height beat the aspect-ratio below, so the
+   About photo rendered 1583px tall and cropped the sign down to
+   "N FOUNT & CO LTD" (Liam, 18 Sep 2026). Every other image sets its own. */
+img{max-width:100%;height:auto;display:block;image-orientation:from-image}
 h1,h2,h3{font-family:'Jost',system-ui,sans-serif;font-weight:600;line-height:1.1;letter-spacing:.005em}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--accent);color:#fff}
@@ -120,7 +124,7 @@ header.nav.scrolled{background:rgba(23,21,18,.94);backdrop-filter:blur(10px);box
 /* about */
 .about{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
 .about-img{position:relative}
-.about-img img{width:100%;aspect-ratio:4/4.6;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)}
+.about-img img{width:100%;aspect-ratio:4/3.6;max-height:520px;object-fit:cover;object-position:center 58%;border-radius:var(--radius);box-shadow:var(--shadow)}
 .about-img .tag{position:absolute;left:-14px;bottom:-14px;background:var(--dark);color:#fff;padding:16px 22px;border-radius:12px;font-family:'Jost',system-ui,sans-serif;font-weight:600;font-size:1rem;line-height:1.15;box-shadow:var(--shadow)}
 .about-img .tag small{display:block;font-family:'Mulish';font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-soft);margin-top:4px}
 .about h2{font-size:clamp(1.7rem,3vw,2.3rem);margin:14px 0 18px}
@@ -138,6 +142,15 @@ header.nav.scrolled{background:rgba(23,21,18,.94);backdrop-filter:blur(10px);box
 .strip figure{margin:0;flex:none;scroll-snap-align:start;max-width:86vw}
 .strip img{height:clamp(260px,40vw,400px);width:auto;max-width:100%;object-fit:cover;border-radius:12px}
 .strip figcaption{font-size:.86rem;color:var(--muted);margin-top:10px;font-weight:700}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:860px){.faq-grid{grid-template-columns:1fr}}
+/* Every answer is on the page, not behind a click: it is what a reader wants
+   and it is what Google's AI answers and the chat assistants read. */
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px}
+.faq-item h3{font-size:1.04rem;line-height:1.4;margin-bottom:10px}
+.faq-item p{color:var(--muted);font-size:.95rem}
 
 /* instagram */
 .ig-wrap{display:flex;justify-content:center}
@@ -225,6 +238,158 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
   #intro .logo-img{width:min(400px,76vw)}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Dan Fountain & Co Ltd",
+  "description": "Award winning Registered Master Builders in Wānaka. Architectural new homes, high-end interiors, renovations and specialist joinery across the Upper Clutha and Queenstown Lakes district.",
+  "url": "https://dan-fountain-and-co-ltd-demo.vercel.app/",
+  "telephone": "+6421988865",
+  "email": "danfountainandco@gmail.com",
+  "image": "https://dan-fountain-and-co-ltd-demo.vercel.app/img/hero-schist.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Wānaka",
+    "addressRegion": "Otago",
+    "addressCountry": "NZ"
+  },
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "Wānaka"
+    },
+    {
+      "@type": "Place",
+      "name": "Albert Town"
+    },
+    {
+      "@type": "Place",
+      "name": "Luggate"
+    },
+    {
+      "@type": "Place",
+      "name": "Lake Hāwea"
+    },
+    {
+      "@type": "Place",
+      "name": "Cardrona"
+    },
+    {
+      "@type": "Place",
+      "name": "Upper Clutha"
+    },
+    {
+      "@type": "Place",
+      "name": "Queenstown Lakes District"
+    },
+    {
+      "@type": "Place",
+      "name": "Central Otago"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/danfountain/"
+  ],
+  "knowsAbout": [
+    "Architectural new homes",
+    "High-end residential construction",
+    "Schist stonework",
+    "Cedar and horizontal shiplap cladding",
+    "Complex renovations and extensions",
+    "Custom joinery and fit-outs",
+    "Decks, boardwalks and concrete"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What areas does Dan Fountain & Co Ltd service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dan Fountain & Co Ltd builds across Wānaka, Albert Town, Luggate, Lake Hāwea and Cardrona, and takes work throughout the wider Queenstown Lakes district. The crew is Wānaka based, so most sites are within twenty minutes of town, from lakefront and hillside sections to rural blocks out through the Upper Clutha. If your section is in the district, ring 021 988 865 and Dan will tell you whether it suits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Dan Fountain & Co Ltd located in Wānaka?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dan Fountain & Co Ltd is based in Wānaka, Central Otago. There is no showroom or front counter: Dan runs the business from the sites he is building on, so meetings happen on your section, at your architect's office or over the phone. Call or text 021 988 865, or email danfountainandco@gmail.com, and he will arrange a time that suits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What building services do you provide in the Queenstown Lakes district?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Four things: architectural new homes, high-end interiors, specialist joinery and fit-outs, and decks, landscaping and site work. That covers design-led new builds in cedar, schist and steel; kitchens, stone benchtops, timber ceilings and cabinetry; saunas, feature walls and one-off details; and the concrete, decks and boardwalks that tie a Central Otago house into its site. One crew takes the job from earthworks to handover."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you specialise in Central Otago architectural builds and high-end residential construction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Architectural, high-end residential work is the whole focus of Dan Fountain & Co Ltd, and the builds have won Registered Master Builders awards. In practice that means schist stonework, cedar and horizontal shiplap cladding, double-height glazing and the detailing those materials demand, working alongside architects and designers across Wānaka and the Southern Lakes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do your building methods handle Wānaka's extreme alpine climate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Central Otago swings from hard winter frosts and snow to dry thirty-degree summers with heavy alpine UV, so every build is detailed for movement, water and cold. That means insulation and glazing to the current H1 requirements, careful flashing and cavity detailing behind cedar and schist, timber allowed to move as it dries, and concrete pours scheduled around the frost rather than through it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Dan Fountain & Co Ltd handle complex renovations or extensions on existing Wānaka homes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, complex renovations and extensions are a large part of the work. That includes reworking older Wānaka and Albert Town homes, opening up living areas, adding extensions and full interior rebuilds, often while the rest of the house stays standing. The same crew that starts the job finishes it, and Dan will talk you through what living on site through a renovation actually looks like."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you build light commercial projects or outdoor installations in Wānaka?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Outdoor installations, yes: decks, concrete, boardwalks, platforms, custom cedar saunas and outdoor structures built for Central Otago weather. Light commercial fit-outs are taken case by case, since the core of the business is high-end residential. Ring Dan on 021 988 865 with what you have in mind and he will tell you honestly whether it is a job for his crew."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you a registered building company with local experience in the Southern Lakes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Dan Fountain & Co Ltd is a New Zealand registered company and a Registered Master Builder, with award winning work across the Wānaka district. Being a Registered Master Builder means the build can be backed by a Master Build Guarantee, and it is the same locally based crew on your job from the first pour to the final fit-off."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I get a quote or consult with a builder for a project in Wānaka or Albert Town?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Call or text Dan on 021 988 865, or email danfountainandco@gmail.com. Send the plans if you have them, or a sketch and some photos if you do not, plus the site address and roughly when you want to start. You deal with Dan directly rather than a salesperson, so you get a straight answer on what the job needs and a clear price."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you currently hiring qualified carpenters or apprentice builders in Wānaka?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dan Fountain & Co Ltd is always happy to hear from qualified carpenters and apprentices who want to work in Wānaka, even when there is no advertised vacancy. Send your CV and a few photos of work you are proud of to danfountainandco@gmail.com, or ring 021 988 865. Good hands on the tools are worth making room for."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -244,6 +409,7 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
       <a class="lnk" href="#about">About</a>
       <a class="lnk" href="#projects">Projects</a>
       <a class="lnk" href="#reviews">Reviews</a>
+      <a class="lnk" href="#faq">FAQ</a>
       <a class="lnk" href="#contact">Contact</a>
       <a class="nav-call" href="tel:+6421988865">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -264,6 +430,7 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
   <a href="#reviews">Reviews</a>
+  <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
   <a class="btn btn-primary mm-call" href="tel:+6421988865" style="justify-content:center">Call 021 988 865</a>
 </div>
@@ -385,7 +552,7 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
   <div class="wrap">
     <div class="shead center reveal">
       <h2>Follow the build</h2>
-      <p>Progress shots and finished work, straight from site. Here's a recent post from the Instagram page.</p>
+      <p>Progress shots and finished work, straight from site. Follow <a href="https://www.instagram.com/danfountain/" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700">@danfountain</a> to see jobs as they go up.</p>
     </div>
     <div class="ig-wrap reveal">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DcNo5qexRRJ/" data-instgrm-version="14" style="background:#FFF; border:0; margin:0 auto; max-width:540px; min-width:280px; padding:0; width:100%;">
@@ -393,7 +560,7 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
       </blockquote>
     </div>
     <div class="ig-cta reveal">
-      <a class="btn btn-dark" href="https://www.instagram.com/p/DcNo5qexRRJ/" target="_blank" rel="noopener">
+      <a class="btn btn-dark" href="https://www.instagram.com/danfountain/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
         See more on Instagram
       </a>
@@ -441,6 +608,59 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
   </div>
 </section>
 
+<!-- faq -->
+<section class="sec sec-bone" id="faq">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <span class="eyebrow">Common questions</span>
+      <h2>Questions we get asked</h2>
+      <p>Straight answers on where we build, what we build and how to get a price. Anything not covered here, ring Dan on 021 988 865.</p>
+    </div>
+    <div class="faq-grid">
+      <article class="faq-item reveal">
+        <h3>What areas does Dan Fountain &amp; Co Ltd service?</h3>
+        <p>Dan Fountain &amp; Co Ltd builds across Wānaka, Albert Town, Luggate, Lake Hāwea and Cardrona, and takes work throughout the wider Queenstown Lakes district. The crew is Wānaka based, so most sites are within twenty minutes of town, from lakefront and hillside sections to rural blocks out through the Upper Clutha. If your section is in the district, ring 021 988 865 and Dan will tell you whether it suits.</p>
+      </article>
+      <article class="faq-item reveal">
+        <h3>Where is Dan Fountain &amp; Co Ltd located in Wānaka?</h3>
+        <p>Dan Fountain &amp; Co Ltd is based in Wānaka, Central Otago. There is no showroom or front counter: Dan runs the business from the sites he is building on, so meetings happen on your section, at your architect&#x27;s office or over the phone. Call or text 021 988 865, or email danfountainandco@gmail.com, and he will arrange a time that suits.</p>
+      </article>
+      <article class="faq-item reveal">
+        <h3>What building services do you provide in the Queenstown Lakes district?</h3>
+        <p>Four things: architectural new homes, high-end interiors, specialist joinery and fit-outs, and decks, landscaping and site work. That covers design-led new builds in cedar, schist and steel; kitchens, stone benchtops, timber ceilings and cabinetry; saunas, feature walls and one-off details; and the concrete, decks and boardwalks that tie a Central Otago house into its site. One crew takes the job from earthworks to handover.</p>
+      </article>
+      <article class="faq-item reveal">
+        <h3>Do you specialise in Central Otago architectural builds and high-end residential construction?</h3>
+        <p>Yes. Architectural, high-end residential work is the whole focus of Dan Fountain &amp; Co Ltd, and the builds have won Registered Master Builders awards. In practice that means schist stonework, cedar and horizontal shiplap cladding, double-height glazing and the detailing those materials demand, working alongside architects and designers across Wānaka and the Southern Lakes.</p>
+      </article>
+      <article class="faq-item reveal">
+        <h3>How do your building methods handle Wānaka&#x27;s extreme alpine climate?</h3>
+        <p>Central Otago swings from hard winter frosts and snow to dry thirty-degree summers with heavy alpine UV, so every build is detailed for movement, water and cold. That means insulation and glazing to the current H1 requirements, careful flashing and cavity detailing behind cedar and schist, timber allowed to move as it dries, and concrete pours scheduled around the frost rather than through it.</p>
+      </article>
+      <article class="faq-item reveal">
+        <h3>Can Dan Fountain &amp; Co Ltd handle complex renovations or extensions on existing Wānaka homes?</h3>
+        <p>Yes, complex renovations and extensions are a large part of the work. That includes reworking older Wānaka and Albert Town homes, opening up living areas, adding extensions and full interior rebuilds, often while the rest of the house stays standing. The same crew that starts the job finishes it, and Dan will talk you through what living on site through a renovation actually looks like.</p>
+      </article>
+      <article class="faq-item reveal">
+        <h3>Do you build light commercial projects or outdoor installations in Wānaka?</h3>
+        <p>Outdoor installations, yes: decks, concrete, boardwalks, platforms, custom cedar saunas and outdoor structures built for Central Otago weather. Light commercial fit-outs are taken case by case, since the core of the business is high-end residential. Ring Dan on 021 988 865 with what you have in mind and he will tell you honestly whether it is a job for his crew.</p>
+      </article>
+      <article class="faq-item reveal">
+        <h3>Are you a registered building company with local experience in the Southern Lakes?</h3>
+        <p>Yes. Dan Fountain &amp; Co Ltd is a New Zealand registered company and a Registered Master Builder, with award winning work across the Wānaka district. Being a Registered Master Builder means the build can be backed by a Master Build Guarantee, and it is the same locally based crew on your job from the first pour to the final fit-off.</p>
+      </article>
+      <article class="faq-item reveal">
+        <h3>How can I get a quote or consult with a builder for a project in Wānaka or Albert Town?</h3>
+        <p>Call or text Dan on 021 988 865, or email danfountainandco@gmail.com. Send the plans if you have them, or a sketch and some photos if you do not, plus the site address and roughly when you want to start. You deal with Dan directly rather than a salesperson, so you get a straight answer on what the job needs and a clear price.</p>
+      </article>
+      <article class="faq-item reveal">
+        <h3>Are you currently hiring qualified carpenters or apprentice builders in Wānaka?</h3>
+        <p>Dan Fountain &amp; Co Ltd is always happy to hear from qualified carpenters and apprentices who want to work in Wānaka, even when there is no advertised vacancy. Send your CV and a few photos of work you are proud of to danfountainandco@gmail.com, or ring 021 988 865. Good hands on the tools are worth making room for.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- contact -->
 <section class="sec sec-dark" id="contact">
   <div class="wrap">
@@ -465,11 +685,12 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
           <div><b>Mon-Fri, on site from early</b><small>Leave a text after hours and Dan will come back to you</small></div>
         </div>
+        <div class="crow">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></div>
+          <div><b><a href="https://www.instagram.com/danfountain/" target="_blank" rel="noopener" style="color:inherit">@danfountain</a></b><small>Follow the builds on Instagram</small></div>
+        </div>
         <div class="socials">
-          <a href="https://www.facebook.com/search/top?q=dan%20fountain%20and%20co" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/p/DcNo5qexRRJ/" target="_blank" rel="noopener" aria-label="Instagram">
+          <a href="https://www.instagram.com/danfountain/" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
           </a>
         </div>
@@ -508,8 +729,7 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
         <img class="foot-logo" src="img/logo-white.png" alt="Dan Fountain &amp; Co" width="900" height="264">
         <p>Award winning Registered Master Builders in Wānaka. Architectural new homes, renovations, interiors and specialist joinery across the Upper Clutha.</p>
         <div class="foot-social">
-          <a href="https://www.facebook.com/search/top?q=dan%20fountain%20and%20co" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
-          <a href="https://www.instagram.com/p/DcNo5qexRRJ/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+          <a href="https://www.instagram.com/danfountain/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
         </div>
       </div>
       <div class="foot-col">
@@ -518,6 +738,7 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="foot-col">
