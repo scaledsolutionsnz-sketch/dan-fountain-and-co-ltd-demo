@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dan Fountain &amp; Co Ltd | Award Winning Master Builders, Wānaka</title>
-<meta name="description" content="Dan Fountain & Co Ltd are award winning Registered Master Builders in Wānaka. Architectural new homes, high-end interiors and renovations across the Upper Clutha. Call 021 988 865." />
+<meta name="description" content="Dan Fountain & Co Ltd are award winning Registered Master Builders in Wānaka. Architectural new homes, high-end interiors and renovations across the Upper Clutha. Call 021 988 865. Now hiring qualified and apprentice builders in Wānaka." />
 <meta name="theme-color" content="#171512" />
 <meta property="og:title" content="Dan Fountain &amp; Co Ltd | Master Builders, Wānaka" />
 <meta property="og:description" content="Award winning Registered Master Builders in Wānaka. Architectural new homes, high-end interiors and renovations." />
@@ -23,6 +23,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:96px}
 body{font-family:'Mulish',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:15.5px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 /* height:auto matters here: an img's width/height ATTRIBUTES arrive as CSS,
    and without this the attribute height beat the aspect-ratio below, so the
@@ -63,7 +64,12 @@ a{color:inherit;text-decoration:none}
 @keyframes introLn{to{width:130px}}
 
 /* nav */
-header.nav{position:fixed;top:0;left:0;right:0;z-index:900;transition:background .3s ease,box-shadow .3s ease;padding:15px 0}
+/* hiring bar (top of every page) */
+.hirebar{display:block;background:var(--accent);color:#fff;text-align:center;font-weight:700;font-size:.86rem;line-height:1.35;padding:8px 18px}
+.hirebar b{font-weight:800;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.hirebar:hover{background:var(--accent-2)}
+header.nav{position:fixed;top:0;left:0;right:0;z-index:900;transition:background .3s ease,box-shadow .3s ease}
+header.nav .nav-in{padding-top:15px;padding-bottom:15px}
 header.nav.scrolled{background:rgba(23,21,18,.94);backdrop-filter:blur(10px);box-shadow:0 6px 24px -16px rgba(0,0,0,.6)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .nav-links{display:flex;align-items:center;gap:28px}
@@ -87,7 +93,7 @@ header.nav.scrolled{background:rgba(23,21,18,.94);backdrop-filter:blur(10px);box
 .hero-slides .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease}
 .hero-slides .slide.active{opacity:1}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,21,18,.5) 0%,rgba(23,21,18,.42) 55%,rgba(23,21,18,.85) 100%)}
-.hero-inner{position:relative;z-index:3;padding:130px 0 64px;width:100%}
+.hero-inner{position:relative;z-index:3;padding:166px 0 64px;width:100%}
 .hero .eyebrow{color:var(--accent-soft)}
 .hero h1{color:#fff;font-weight:600;font-size:clamp(2.2rem,4.6vw,3.6rem);letter-spacing:.005em;margin:16px 0 20px;max-width:17ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
 .hero p.lead{color:rgba(255,255,255,.9);font-size:clamp(1rem,1.4vw,1.15rem);max-width:52ch;margin-bottom:30px}
@@ -157,17 +163,25 @@ header.nav.scrolled{background:rgba(23,21,18,.94);backdrop-filter:blur(10px);box
 .ig-wrap .instagram-media{margin:0 auto !important;box-shadow:var(--shadow) !important;border-radius:var(--radius) !important;max-width:540px !important;width:100% !important}
 .ig-cta{text-align:center;margin-top:30px}
 
-/* reviews */
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.rev{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
-.rev .stars{color:#E0982F;letter-spacing:2px;font-size:1rem}
-.rev p{color:var(--ink);font-size:1rem}
-.rev .who{display:flex;align-items:center;gap:12px;margin-top:auto}
-.rev .who .ini{width:42px;height:42px;border-radius:50%;background:var(--bone);color:var(--accent);display:grid;place-items:center;font-weight:800}
-.rev .who b{display:block;font-size:.96rem}
-.rev .who small{color:var(--muted);font-size:.82rem}
-.rev-actions{text-align:center;margin-top:44px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.badge{display:inline-block;background:rgba(185,111,53,.14);color:var(--accent-2);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 13px;border-radius:999px}
+/* careers */
+.careers{position:relative;background-color:var(--dark);background-image:linear-gradient(180deg,rgba(23,21,18,.9),rgba(23,21,18,.84)),url('img/careers-gable-1920.webp');background-size:cover;background-position:center 40%;color:#EFEAE0}
+.careers-top{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.careers h2{color:#fff;font-size:clamp(1.7rem,3vw,2.4rem);margin:14px 0 18px}
+.careers p{color:rgba(239,234,224,.8);margin-bottom:16px;max-width:56ch}
+.careers .eyebrow{color:var(--accent-soft)}
+.hire-graphic{background:#fff;border-radius:var(--radius);padding:10px;box-shadow:var(--shadow);max-width:440px;justify-self:center;width:100%}
+.hire-graphic img{width:100%;border-radius:8px}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:48px 0 40px}
+.role{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:26px 26px 28px;backdrop-filter:blur(6px)}
+.role h3{color:#fff;font-size:1.25rem;margin-bottom:8px}
+.role p{margin:0;font-size:.98rem}
+.careers h3.why{color:#fff;font-size:1.2rem}
+.careers .checklist{margin:16px 0 36px;grid-template-columns:1fr 1fr}
+.careers .checklist li{color:#EFEAE0}
+@media(max-width:700px){.careers .checklist{grid-template-columns:1fr}}
+.careers-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn-lg{font-size:1.1rem;padding:18px 34px;min-height:60px}
+.careers p.careers-note{margin:18px 0 0;font-size:.95rem;color:rgba(239,234,224,.7)}
 
 /* review banner */
 .revbanner{text-align:center}
@@ -217,19 +231,20 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
 @media(max-width:900px){
   .nav-links{display:none}
   .burger{display:flex}
-  .grid3,.rev-grid{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr}
   .about,.contact{grid-template-columns:1fr;gap:34px}
   .about-img{order:-1}
   .foot-grid{grid-template-columns:1fr;gap:30px}
   .sec{padding:66px 0}
-  .hero-inner{padding:120px 0 46px}
+  .hero-inner{padding:158px 0 46px}
+  .careers-top{grid-template-columns:1fr;gap:34px}
+  .roles{grid-template-columns:1fr}
 }
 @media(max-width:520px){
   body{font-size:14.5px}
   .hero-cta{flex-direction:column;align-items:stretch}
   .hero-cta .btn{width:100%;justify-content:center}
-  .rev-actions{flex-direction:column}
-  .rev-actions .btn{width:100%;justify-content:center}
+  .careers-cta .btn{width:100%;justify-content:center}
   .about-img .tag{left:0}
 }
 @media(prefers-reduced-motion:reduce){
@@ -386,8 +401,69 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
       "name": "Are you currently hiring qualified carpenters or apprentice builders in Wānaka?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dan Fountain & Co Ltd is always happy to hear from qualified carpenters and apprentices who want to work in Wānaka, even when there is no advertised vacancy. Send your CV and a few photos of work you are proud of to danfountainandco@gmail.com, or ring 021 988 865. Good hands on the tools are worth making room for."
+        "text": "Yes, we're hiring qualified builders and apprentice builders now. Tap Apply now in the Careers section, or call Dan on 021 988 865."
       }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "JobPosting",
+      "title": "Qualified builder",
+      "description": "<p>Experienced builders who want to work on architectural homes in schist, cedar and glass, in Wānaka and across the Upper Clutha.</p><p>Dan Fountain &amp; Co is an award winning Registered Master Builders company based in Wānaka. We build architectural homes and high-end interiors across the Upper Clutha, and we've got years of work booked ahead. Apply by emailing danfountainandco@gmail.com or call Dan on 021 988 865.</p>",
+      "datePosted": "2026-10-29",
+      "validThrough": "2027-04-30T23:59:00+13:00",
+      "occupationalCategory": "47-2031.00 Carpenters",
+      "qualifications": "Qualified builder or carpenter",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Dan Fountain & Co Ltd",
+        "sameAs": "https://dan-fountain-and-co-ltd-demo.vercel.app/",
+        "logo": "https://dan-fountain-and-co-ltd-demo.vercel.app/img/logo-black.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "163 Wanaka Mount Aspiring Road",
+          "addressLocality": "Wānaka",
+          "postalCode": "9305",
+          "addressRegion": "Otago",
+          "addressCountry": "NZ"
+        }
+      },
+      "directApply": false
+    },
+    {
+      "@type": "JobPosting",
+      "title": "Apprentice builder",
+      "description": "<p>Learn the trade on high-end builds alongside an award winning crew, in Wānaka and across the Upper Clutha.</p><p>Dan Fountain &amp; Co is an award winning Registered Master Builders company based in Wānaka. We build architectural homes and high-end interiors across the Upper Clutha, and we've got years of work booked ahead. Apply by emailing danfountainandco@gmail.com or call Dan on 021 988 865.</p>",
+      "datePosted": "2026-10-29",
+      "validThrough": "2027-04-30T23:59:00+13:00",
+      "occupationalCategory": "47-2031.00 Carpenters",
+      "qualifications": "No qualification needed, apprenticeship",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Dan Fountain & Co Ltd",
+        "sameAs": "https://dan-fountain-and-co-ltd-demo.vercel.app/",
+        "logo": "https://dan-fountain-and-co-ltd-demo.vercel.app/img/logo-black.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "163 Wanaka Mount Aspiring Road",
+          "addressLocality": "Wānaka",
+          "postalCode": "9305",
+          "addressRegion": "Otago",
+          "addressCountry": "NZ"
+        }
+      },
+      "directApply": false
     }
   ]
 }
@@ -404,13 +480,14 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
 
 <!-- nav -->
 <header class="nav" id="nav">
+  <a class="hirebar" href="#careers">Now hiring: qualified builders and apprentice builders in Wānaka. <b>Apply now</b></a>
   <div class="wrap nav-in">
     <a href="#top" class="brand" aria-label="Dan Fountain and Co home"><img class="brand-logo" src="img/logo-white.png" alt="Dan Fountain &amp; Co" width="900" height="264"></a>
     <nav class="nav-links" aria-label="Main">
       <a class="lnk" href="#services">What we build</a>
       <a class="lnk" href="#about">About</a>
+      <a class="lnk" href="#careers">Careers</a>
       <a class="lnk" href="#projects">Projects</a>
-      <a class="lnk" href="#reviews">Reviews</a>
       <a class="lnk" href="#faq">FAQ</a>
       <a class="lnk" href="#contact">Contact</a>
       <a class="nav-call" href="tel:+6421988865">
@@ -430,8 +507,8 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
   </div>
   <a href="#services">What we build</a>
   <a href="#about">About</a>
+  <a href="#careers">Careers</a>
   <a href="#projects">Projects</a>
-  <a href="#reviews">Reviews</a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
   <a class="btn btn-primary mm-call" href="tel:+6421988865" style="justify-content:center">Call 021 988 865</a>
@@ -455,7 +532,8 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
           Talk to Dan
         </a>
         <a class="btn btn-ghost" href="#projects">See our work</a>
-        <a class="rating-badge" href="#reviews">
+        <a class="btn btn-ghost" href="#careers">Join our crew</a>
+        <a class="rating-badge" href="#about">
           <span class="stars" aria-hidden="true">★★★★★</span>
           <span><b>Award winning Master Builders</b><small>Registered Master Builders · Wānaka</small></span>
         </a>
@@ -474,19 +552,19 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
     </div>
     <div class="grid3">
       <article class="card reveal">
-        <div class="ph"><img loading="lazy" width="1400" height="963" src="img/patio.jpg" alt="Black cedar clad home with concrete patio pads and mountain views" ></div>
+        <div class="ph"><img loading="lazy" width="1920" height="1480" src="img/patio.jpg" alt="Black cedar clad home with concrete patio pads and mountain views" ></div>
         <div class="bd"><span class="num">01</span><h3>Architectural new homes</h3><p>Design-led new builds in cedar, schist and steel, managed end to end from earthworks to handover.</p></div>
       </article>
       <article class="card reveal">
-        <div class="ph"><img loading="lazy" width="1400" height="1211" src="img/kitchen-marble.jpg" alt="Kitchen with black marble island bench, brass rangehood and recycled timber ceiling"></div>
+        <div class="ph"><img loading="lazy" width="1595" height="1920" src="img/kitchen-marble.jpg" alt="Kitchen with black marble island bench, brass rangehood and recycled timber ceiling"></div>
         <div class="bd"><span class="num">02</span><h3>High-end interiors</h3><p>Kitchens, stone benchtops, timber ceilings and cabinetry fitted with the care a good build deserves.</p></div>
       </article>
       <article class="card reveal">
-        <div class="ph"><img loading="lazy" width="1200" height="1561" src="img/sauna.jpg" alt="Custom cedar sauna being installed by Dan Fountain and Co"></div>
+        <div class="ph"><img loading="lazy" width="1477" height="1920" src="img/sauna.jpg" alt="Custom cedar sauna being installed by Dan Fountain and Co"></div>
         <div class="bd"><span class="num">03</span><h3>Specialist joinery &amp; fit-outs</h3><p>Saunas, feature walls and the tricky one-off details other builders pass on. We enjoy them.</p></div>
       </article>
       <article class="card reveal">
-        <div class="ph"><img loading="lazy" width="1200" height="990" src="img/boardwalk.jpg" alt="Timber boardwalk and platform structures at sunrise with mountain backdrop"></div>
+        <div class="ph"><img loading="lazy" width="1423" height="1920" src="img/boardwalk.jpg" alt="Timber boardwalk and platform structures at sunrise with mountain backdrop"></div>
         <div class="bd"><span class="num">04</span><h3>Decks, landscaping &amp; site work</h3><p>Concrete, decks, boardwalks and outdoor structures that tie the house into its site, built to handle Central Otago weather.</p></div>
       </article>
     </div>
@@ -498,7 +576,7 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
   <div class="wrap">
     <div class="about">
       <div class="about-img reveal">
-        <img loading="lazy" width="1200" height="1583" src="img/site-sign.jpg" alt="Dan Fountain and Co Ltd site sign in front of a schist home in the hills above Wānaka">
+        <img loading="lazy" width="1455" height="1920" src="img/site-sign.jpg" alt="Dan Fountain and Co Ltd site sign in front of a schist home in the hills above Wānaka">
         <div class="tag">Wānaka<small>Registered Master Builders</small></div>
       </div>
       <div class="reveal">
@@ -517,6 +595,47 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
   </div>
 </section>
 
+<!-- careers -->
+<section class="sec careers" id="careers">
+  <div class="wrap">
+    <div class="careers-top">
+      <div class="reveal">
+        <span class="eyebrow">Careers</span>
+        <h2>Now hiring: join an award winning crew in Wānaka</h2>
+        <p>Dan Fountain &amp; Co is an award winning Registered Master Builders company based in Wānaka. We build architectural homes and high-end interiors across the Upper Clutha, and we've got years of work booked ahead.</p>
+        <p>We're growing the crew and looking for qualified builders and apprentice builders who take pride in doing the job properly.</p>
+      </div>
+      <figure class="hire-graphic reveal">
+        <img loading="lazy" width="1440" height="1920" src="img/now-hiring-1080.webp" srcset="img/now-hiring-1080.webp 810w, img/now-hiring-1920.webp 1440w" sizes="(max-width:900px) 90vw, 440px" alt="Dan Fountain and Co Now Hiring poster: join our crew, qualified builders and apprentice builders, phone 021 988 865, over a lit glass gable home with a schist fireplace">
+      </figure>
+    </div>
+    <div class="roles">
+      <article class="role reveal"><h3>Qualified builders</h3><p>Experienced builders who want to work on architectural homes in schist, cedar and glass.</p></article>
+      <article class="role reveal"><h3>Apprentice builders</h3><p>Learn the trade on high-end builds alongside an award winning crew.</p></article>
+    </div>
+    <div class="reveal">
+      <h3 class="why">Why join us</h3>
+      <ul class="checklist">
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Award winning Registered Master Builders</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Architectural homes and high-end interiors</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Steady work booked well ahead</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Based in Wānaka, working across the Upper Clutha</li>
+      </ul>
+      <div class="careers-cta">
+        <a class="btn btn-primary btn-lg" href="#" data-gmail data-user="danfountainandco" data-domain="gmail.com" data-su="Job%20application" data-body="Hi%20Dan%2C%0A%0AI%27d%20like%20to%20apply%20to%20join%20the%20crew.%0A%0AName%3A%20%0APhone%3A%20%0ARole%20%28qualified%20or%20apprentice%29%3A%20%0AExperience%3A%20%0A">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          Apply now
+        </a>
+        <a class="btn btn-ghost" href="tel:+6421988865">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Dan, 021 988 865
+        </a>
+      </div>
+      <p class="careers-note">Send us a few lines about yourself and your experience, or give Dan a call for a chat.</p>
+    </div>
+  </div>
+</section>
+
 <!-- projects -->
 <section class="sec sec-bone" id="projects">
   <div class="wrap">
@@ -526,24 +645,40 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
     </div>
     <div class="strip reveal" tabindex="0" aria-label="Photos of Dan Fountain and Co projects">
       <figure>
-        <img loading="lazy" width="1200" height="1519" src="img/glass-gable.jpg" alt="Double height glass gable with schist fireplace at dusk">
+        <img loading="lazy" width="1410" height="1920" src="img/glass-gable.jpg" alt="Double height glass gable with schist fireplace at dusk">
         <figcaption>Glass gable and schist fireplace, lit up at dusk.</figcaption>
       </figure>
       <figure>
-        <img loading="lazy" width="1200" height="1583" src="img/cedar.jpg" alt="Cedar cladding detail glowing in evening sun">
+        <img loading="lazy" width="1471" height="1920" src="img/cedar.jpg" alt="Cedar cladding detail glowing in evening sun">
         <figcaption>Cedar cladding catching the last of the sun.</figcaption>
       </figure>
       <figure>
-        <img loading="lazy" width="1400" height="1078" src="img/fitout.jpg" alt="Builder installing cabinetry inside a recycled timber interior">
+        <img loading="lazy" width="1920" height="1493" src="img/fitout.jpg" alt="Builder installing cabinetry inside a recycled timber interior">
         <figcaption>Cabinetry going in under a recycled timber ceiling.</figcaption>
       </figure>
       <figure>
-        <img loading="lazy" width="1200" height="922" src="img/kitchen-window.jpg" alt="Kitchen cabinetry being fitted beside full height windows">
+        <img loading="lazy" width="1920" height="1453" src="img/kitchen-window.jpg" alt="Kitchen cabinetry being fitted beside full height windows">
         <figcaption>Kitchen fit-off, mountain views included.</figcaption>
       </figure>
       <figure>
-        <img loading="lazy" width="1200" height="1465" src="img/concrete-pour.jpg" alt="Concrete pump pouring a patio slab beside a schist and glass home">
+        <img loading="lazy" width="1597" height="1920" src="img/concrete-pour.jpg" alt="Concrete pump pouring a patio slab beside a schist and glass home">
         <figcaption>Patio pour going down on a winter morning.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" width="1440" height="1920" src="img/roof-framing-1080.webp" srcset="img/roof-framing-1080.webp 810w, img/roof-framing-1920.webp 1440w" sizes="(max-width:900px) 86vw, 400px" alt="Builders on fresh roof framing at Hidden Hills, Wānaka, with the mountains lit by evening sun">
+        <figcaption>Roof framing done and ready at Hidden Hills.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" width="1920" height="1440" src="img/block-walls-1080.webp" srcset="img/block-walls-1080.webp 1080w, img/block-walls-1920.webp 1920w" sizes="(max-width:900px) 86vw, 400px" alt="Concrete block walls and timber bracing going up on a hillside section">
+        <figcaption>Block walls and framing taking shape on the latest project.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" width="1536" height="1920" src="img/black-clad-home-1080.webp" srcset="img/black-clad-home-1080.webp 864w, img/black-clad-home-1920.webp 1536w" sizes="(max-width:900px) 86vw, 400px" alt="Black-clad gable home with tall glazing and a schist wall, the front lawn being hydroseeded">
+        <figcaption>Black-clad gable home, hydroseeded and finished.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" width="1920" height="1440" src="img/concrete-pump-1080.webp" srcset="img/concrete-pump-1080.webp 1080w, img/concrete-pump-1920.webp 1920w" sizes="(max-width:900px) 86vw, 400px" alt="Concrete pump boom pouring a slab on a hillside site above Wānaka">
+        <figcaption>Slab pour at Hidden Hills, out of the ground at last.</figcaption>
       </figure>
     </div>
   </div>
@@ -566,37 +701,6 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
         See more on Instagram
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- reviews -->
-<section class="sec sec-bone" id="reviews">
-  <div class="wrap">
-    <div class="shead center reveal">
-      <h2>What clients say <span class="badge" style="vertical-align:middle;margin-left:8px">Example reviews</span></h2>
-      <p>Real Google reviews will show here once they're live. In the meantime, this is the kind of feedback an award winning builder earns.</p>
-    </div>
-    <div class="rev-grid">
-      <div class="rev reveal">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p>"Dan built our new home above the lake and the finish is superb. Schist, cedar, big glass, all of it done properly and on the timeline he gave us at the start."</p>
-        <div class="who"><span class="ini">CW</span><span><b>Craig W.</b><small>Wānaka · New build</small></span></div>
-      </div>
-      <div class="rev reveal">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p>"The attention to detail on our kitchen and interior fit-out was something else. The crew were tidy, easy to have around and nothing was a problem."</p>
-        <div class="who"><span class="ini">SM</span><span><b>Sarah-Jane M.</b><small>Albert Town · Renovation</small></span></div>
-      </div>
-      <div class="rev reveal">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p>"Straight answers, clear pricing and quality you can see from the road. Our architect said it was some of the best workmanship he's come across."</p>
-        <div class="who"><span class="ini">TK</span><span><b>Tom K.</b><small>Luggate · Architectural build</small></span></div>
-      </div>
-    </div>
-    <div class="rev-actions reveal">
-      <a class="btn btn-primary" href="https://www.google.com/maps/search/Dan+Fountain+and+Co+Wanaka" target="_blank" rel="noopener">Leave us a Google review</a>
-      <a class="btn btn-dark" href="https://www.google.com/maps/search/Dan+Fountain+and+Co+Wanaka" target="_blank" rel="noopener">See all our Google reviews</a>
     </div>
   </div>
 </section>
@@ -657,7 +761,7 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
       </article>
       <article class="faq-item reveal">
         <h3>Are you currently hiring qualified carpenters or apprentice builders in Wānaka?</h3>
-        <p>Dan Fountain &amp; Co Ltd is always happy to hear from qualified carpenters and apprentices who want to work in Wānaka, even when there is no advertised vacancy. Send your CV and a few photos of work you are proud of to danfountainandco@gmail.com, or ring 021 988 865. Good hands on the tools are worth making room for.</p>
+        <p>Yes, we&#x27;re hiring qualified builders and apprentice builders now. Tap Apply now in the Careers section, or call Dan on 021 988 865.</p>
       </article>
     </div>
   </div>
@@ -704,6 +808,7 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Call Dan, 021 988 865
         </a>
+        <a class="btn btn-ghost" href="#careers">Apply to join the crew</a>
         <a class="btn btn-ghost" href="#" data-gmail data-user="danfountainandco" data-domain="gmail.com" data-su="Enquiry%20from%20the%20website" data-body="Hi%20Dan%2C%0A%0AI%27d%20like%20to%20talk%20about%3A%20">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
           Email the team
@@ -738,8 +843,8 @@ footer{background:#110F0D;color:rgba(239,234,224,.72);padding:66px 0 30px}
         <h4>Explore</h4>
         <a href="#services">What we build</a>
         <a href="#about">About</a>
+        <a href="#careers">Careers</a>
         <a href="#projects">Projects</a>
-        <a href="#reviews">Reviews</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </div>
